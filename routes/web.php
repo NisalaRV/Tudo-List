@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TuduController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//home
+Route::get('/',[HomeController::class,"index"]) ->name('home');
+//tudu
+Route::get('/tudu',[TuduController::class,"index"]) ->name('tudu');
